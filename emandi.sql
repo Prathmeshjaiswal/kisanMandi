@@ -1,0 +1,37 @@
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `farmers`(
+    `id` int (10) unsigned NOT NULL PRIMARY KEY,
+    `Company_Name`VARCHAR(50) NOT NULL,
+    `Email` VARCHAR(30) NOT NULL,
+    `Password` VARCHAR(20) NOT NULL
+) DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 31;
+
+CREATE TABLE IF NOT EXISTS `orders`(
+    `orderid` VARCHAR(10) NOT NULL PRIMARY KEY,
+    `Buyername` VARCHAR(30) NOT NULL,
+    `Category` VARCHAR(10) NOT NULL,
+    `Quantity` VARCHAR(10) NOT NULL,
+    `Price` VARCHAR(10) NOT NULL,
+    `Productid` VARCHAR(10) NOT NULL
+
+) DEFAULT CHARSET = utf8mb4 ;
+
+CREATE TABLE IF NOT EXISTS `products`(
+    `id` INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+    `ComapanyName` VARCHAR(30) NOT NULL,
+    `Category` VARCHAR(20) NOT NULL,
+    `Product_type` VARCHAR(20) NOT NULL,
+    `Description` VARCHAR(100) NOT NULL,
+    `PhoneNo` VARCHAR(13) NOT NULL,
+    `Price` DOUBLE NOT NULL,
+    `ImageName` VARCHAR(30) NOT NULL,
+    `image` longblob NOT NULL
+) DEFAULT CHARSET = utf8mb4 AUTO_INCREMENT = 22;
+
+CREATE TABLE IF NOT EXISTS `Buyers`(
+    `id` INT(10) UNSIGNED NOT NULL PRIMARY KEY,
+    `UserName` VARCHAR(30) NOT NULL UNIQUE,
+    `Password` VARCHAR(20) NOT NULL UNIQUE,
+    `Email` VARCHAR(30) NOT NULL
+) DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 92;
